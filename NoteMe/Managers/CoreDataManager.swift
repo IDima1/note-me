@@ -8,13 +8,21 @@
 import Foundation
 import CoreData
 
-class CoreDataManager: ObservableObject {
+protocol CoreDataManagerProtocol {
+    var isLoaded: Bool { get }
+    var container: NSPersistentContainer { get }
+    
+    func saveContext()
+}  
+
+class CoreDataManager: ObservableObject, CoreDataManagerProtocol {
     static let shared = CoreDataManager()
-    let container: NSPersistentContainer = NSPersistentContainer(name: "Notes")
+    let container: NSPersistentContainer
     
     @Published var isLoaded = false
     
     init() {
+        container = NSPersistentContainer(name: "Notes")
         container.loadPersistentStores { description, error in
             DispatchQueue.main.async {
                 if let error = error {

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NotesView: View {
-    @StateObject var notesViewModel = NotesViewModel()
+    @StateObject var notesViewModel: NotesViewModel
     
     @State var selectedNote: Note?
     
@@ -74,6 +74,6 @@ struct NotesView: View {
 }
 
 #Preview {
-    NotesView()
-        .environmentObject(NotesViewModel())
+    NotesView(notesViewModel: NotesViewModel(manager: CoreDataManager()))
+        .environmentObject(NotesViewModel(manager: CoreDataManager()))
 }

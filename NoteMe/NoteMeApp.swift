@@ -9,9 +9,18 @@ import SwiftUI
 
 @main
 struct NoteMeApp: App {
+    let coreDataManager = CoreDataManager.shared
+    
+    @StateObject private var notesViewModel: NotesViewModel
+    
+    init() {
+        let viewModel = NotesViewModel(manager: coreDataManager)
+        _notesViewModel = StateObject(wrappedValue: viewModel)
+    }
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(notesViewModel: notesViewModel)
                 .environmentObject(CoreDataManager.shared)
         }
     }

@@ -61,5 +61,5 @@ struct EditNoteView: View {
 
 #Preview {
     EditNoteView()
-        .environmentObject(NotesViewModel())
+        .environmentObject(NotesViewModel.init(manager: CoreDataManager()))
 }

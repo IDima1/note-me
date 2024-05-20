@@ -12,10 +12,9 @@ class NotesViewModel: ObservableObject {
     let manager: CoreDataManager
     
     @Published var notes: [Note] = []
-    @Published var isLoaded = true
     
-    init() {
-        self.manager = CoreDataManager()
+    init(manager: CoreDataManager) {
+        self.manager = manager
         fetchNotes()
     }
     

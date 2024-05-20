@@ -10,11 +10,11 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject private var coreDataManager: CoreDataManager
     
-    @StateObject private var notesViewModel = NotesViewModel()
+    @StateObject var notesViewModel: NotesViewModel
     
     var body: some View {
         if notesViewModel.manager.isLoaded {
-            NotesView()
+            NotesView(notesViewModel: notesViewModel)
         } else {
             ProgressView("Loading...")
         }
@@ -22,6 +22,6 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    ContentView(notesViewModel: NotesViewModel(manager: CoreDataManager()))
         .environmentObject(CoreDataManager())
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		324A3B7C2BFB633C001CB986 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 324A3B7B2BFB633C001CB986 /* Localizable.xcstrings */; };
+		324A3B802BFB79C7001CB986 /* LocalizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324A3B7F2BFB79C7001CB986 /* LocalizationManager.swift */; };
 		32B665082BF3AADB008476C7 /* ContentEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B665072BF3AADB008476C7 /* ContentEditorView.swift */; };
 		32F3675C2BF37B4300CB2C2D /* NoteMeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F3675B2BF37B4300CB2C2D /* NoteMeApp.swift */; };
 		32F3675E2BF37B4300CB2C2D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F3675D2BF37B4300CB2C2D /* ContentView.swift */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		324A3B7B2BFB633C001CB986 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		324A3B7F2BFB79C7001CB986 /* LocalizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationManager.swift; sourceTree = "<group>"; };
 		32B665072BF3AADB008476C7 /* ContentEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentEditorView.swift; sourceTree = "<group>"; };
 		32F367582BF37B4300CB2C2D /* NoteMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32F3675B2BF37B4300CB2C2D /* NoteMeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteMeApp.swift; sourceTree = "<group>"; };
@@ -46,6 +50,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		324A3B7A2BFB403C001CB986 /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+				324A3B7B2BFB633C001CB986 /* Localizable.xcstrings */,
+			);
+			path = Resourses;
+			sourceTree = "<group>";
+		};
 		32F3674F2BF37B4300CB2C2D = {
 			isa = PBXGroup;
 			children = (
@@ -65,6 +77,7 @@
 		32F3675A2BF37B4300CB2C2D /* NoteMe */ = {
 			isa = PBXGroup;
 			children = (
+				324A3B7A2BFB403C001CB986 /* Resourses */,
 				32F367742BF3904000CB2C2D /* Views */,
 				32F367702BF38A0000CB2C2D /* ViewModels */,
 				32F3676C2BF37BE000CB2C2D /* Models */,
@@ -88,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				32F3676A2BF37BD100CB2C2D /* CoreDataManager.swift */,
+				324A3B7F2BFB79C7001CB986 /* LocalizationManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -162,6 +176,7 @@
 			knownRegions = (
 				en,
 				Base,
+				uk,
 			);
 			mainGroup = 32F3674F2BF37B4300CB2C2D;
 			productRefGroup = 32F367592BF37B4300CB2C2D /* Products */;
@@ -180,6 +195,7 @@
 			files = (
 				32F367632BF37B4600CB2C2D /* Preview Assets.xcassets in Resources */,
 				32F367602BF37B4600CB2C2D /* Assets.xcassets in Resources */,
+				324A3B7C2BFB633C001CB986 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +206,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				324A3B802BFB79C7001CB986 /* LocalizationManager.swift in Sources */,
 				32F3676B2BF37BD100CB2C2D /* CoreDataManager.swift in Sources */,
 				32F367732BF38A1A00CB2C2D /* NotesViewModel.swift in Sources */,
 				32F367762BF39BA700CB2C2D /* NotesView.swift in Sources */,
@@ -339,6 +356,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -367,6 +385,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
