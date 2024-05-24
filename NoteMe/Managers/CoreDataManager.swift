@@ -13,7 +13,11 @@ protocol CoreDataManagerProtocol {
     var container: NSPersistentContainer { get }
     
     func saveContext()
-}  
+    func fetchNotes() -> [Note]
+    func createNote() -> Note
+    func updateNote(_ note: Note, title: String, content: String, tag: String)
+    func deleteNote(_ note: Note)
+}
 
 class CoreDataManager: ObservableObject, CoreDataManagerProtocol {
     static let shared = CoreDataManager()
@@ -44,5 +48,41 @@ class CoreDataManager: ObservableObject, CoreDataManagerProtocol {
         } catch {
             print("CoreDataManager saveContext error: \(error.localizedDescription)")
         }
+    }
+    
+    func fetchNotes() -> [Note] {
+        let request = NSFetchRequest<Note>(entityName: "Note")
+        
+        do {
+            return try container.viewContext.fetch(request)
+        } catch {
+            print("NotesViewModel fetchNotes error: \(error.localizedDescription)")
+            return []
+        }
+    }
+    
+    func createNote() -> Note {
+        let newNote = Note(context: container.viewContext)
+        
+        newNote.id = UUID()
+        newNote.timestamp = Date()
+        
+        saveContext()
+        
+        return newNote
+    }
+    
+    func updateNote(_ note: Note, title: String, content: String, tag: String) {
+        note.title = title
+        note.content = content
+        note.tag = tag
+        
+        saveContext()
+    }
+    
+    func deleteNote(_ note: Note) {
+        container.viewContext.delete(note)
+        
+        saveContext()
     }
 }
