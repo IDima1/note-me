@@ -9,10 +9,6 @@ import Foundation
 import CoreData
 
 protocol CoreDataManagerProtocol {
-    var isLoaded: Bool { get }
-    var container: NSPersistentContainer { get }
-    
-    func saveContext()
     func fetchNotes() -> [Note]
     func createNote() -> Note
     func updateNote(_ note: Note, title: String, content: String, tag: String)
